@@ -1,0 +1,53 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+  .client-carousel-section {
+    padding: 40px 0;
+    background: #fff;
+    text-align: center;
+    width: 100vw;          
+    margin-left: calc(-50vw + 50%); 
+    overflow-x: hidden;   
+  }
+    
+    .client-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #000;
+      text-align: left;
+      margin-left: 40px;
+    }
+    
+    .carousel {
+      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+      padding: 20px 0;
+    }
+    
+    .carousel-track {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      will-change: transform;
+    }
+    
+    .carousel-track img {
+    height: 45px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: transform 0.4s ease, filter 0.3s ease;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    pointer-events: auto;
+  }
+  
+  .carousel-track img:hover {
+    filter: grayscale(0%);
+    z-index: 10;
+  }
+  
+  

@@ -1,0 +1,198 @@
+@import url(https://db.onlinewebfonts.com/c/7dd5f4bf5d38875ca1822a830b6e6fe4?family=Aptos);
+
+body {
+    margin: 0;
+    font-family: 'Aptos', Arial, sans-serif; /* Added fallback */
+    color: #333;
+    line-height: 1.6;
+    background: #f9f9f9; /* Light background like the image */
+}
+
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 80px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: clamp(1.5em, 5vw, 2.5em);
+    margin: 0;
+    color: #000;
+}
+
+header p {
+    font-size: clamp(0.8em, 2vw, 1em);
+    color: #666;
+    max-width: 632px;
+   margin: 0 auto;
+}
+
+/* Updated Filter Buttons */
+.filter-buttons {
+    display: flex;
+    justify-content: center; /* Center the entire div */
+    border: 2px solid #000000; /* Dark blue border around the group */
+    border-radius: 5px; /* Slight rounding for the entire group */
+    overflow: hidden; /* Ensures inner buttons respect the border */
+    margin: 0 auto; /* Center horizontally */
+    margin-bottom: 30px;
+    gap: 95px; /* Match the spacing in the image */
+    width: 650px; /* Fixed width as per the image */
+}
+
+.filter-btn {
+    padding: 10px 40px; /* Wider padding to match button size in image */
+    border: none; /* Remove internal borders */
+    background: #ffffff; /* White background by default */
+    color: #333;
+    cursor: pointer;
+    font-size: clamp(0.9em, 2.5vw, 1em);
+    transition: background 0.3s ease, box-shadow 0.3s ease; /* Transition for box-shadow */
+    position: relative; /* For box-shadow positioning */
+    flex: 1; /* Distribute space evenly */
+    text-align: center;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: inherit; /* Inherit the button's background */
+    z-index: -1; /* Behind the text */
+    transition: background 0.3s ease;
+}
+
+.filter-btn:first-child {
+    border-radius: 5px 0 0 5px; /* Round only the left edges */
+}
+
+.filter-btn:first-child::before {
+    background: #f0e68c; /* Match "All" background */
+}
+
+.filter-btn:last-child {
+    border-radius: 0 5px 5px 0; /* Round only the right edges */
+}
+
+.filter-btn.active {
+    background: transparent; /* Transparent to show the gap */
+}
+
+.filter-btn.active::before {
+    background: #F2E2B1; /* Match hover color for active state */
+}
+
+.filter-btn:hover {
+    background: transparent; /* Transparent to show the gap */
+}
+
+.filter-btn:hover::before {
+    background: #F2E2B1; /* Light beige hover color */
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Fixed to 2 columns */
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.blog-post {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px); /* Retains lift */
+}
+
+.blog-post:hover img {
+    opacity: 0.9; /* Slight fade for contrast */
+}
+
+.blog-post img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.blog-post .date {
+    display: block;
+    font-size: clamp(0.7em, 2vw, 0.8em);
+    color: #666;
+    padding: 10px;
+}
+
+.blog-post h3 {
+    font-size: clamp(1em, 3vw, 1.2em);
+    margin: 0 10px 10px;
+    color: #000;
+}
+
+.blog-post p {
+    font-size: clamp(0.8em, 2vw, 0.9em);
+    margin: 0 10px 15px;
+    color: #555;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+        width: 80%; /* Single column on small screens */
+        margin: 0 auto;
+
+
+    } 
+
+    .filter-buttons {
+        flex-direction: column;
+        width: 80%; /* Full width on mobile */
+        gap: 0; /* Remove gap when stacked */
+    }
+
+    .filter-btn {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .filter-btn:first-child {
+        border-radius: 5px 5px 0 0;
+    }
+
+    .filter-btn:last-child {
+        border-radius: 0 0 5px 5px;
+    }
+
+    .blog-post img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: clamp(1.2em, 5vw, 1.5em);
+    }
+
+    .filter-btn {
+        text-align: center;
+    }
+}

@@ -1,0 +1,113 @@
+/* :root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    background-color: #ffffff;
+    color: #213547;
+  }
+  
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+  
+  .video-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+  }
+  
+  p {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: #666;
+    font-size: 1.1rem;
+  }
+  
+  .video-container {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f1f1f1;
+  }
+  
+  video {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+  }
+  
+  .video-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .video-controls.hidden {
+    opacity: 0;
+  }
+  
+  .nav-btn, .play-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-btn:hover, .play-btn:hover {
+    background: white;
+  }
+  
+  .nav-btn svg, .play-btn svg {
+    width: 24px;
+    height: 24px;
+    color: #1a1a1a;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .video-controls {
+      padding: 0 1rem;
+    }
+    
+    .nav-btn, .play-btn {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .nav-btn svg, .play-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+  } */

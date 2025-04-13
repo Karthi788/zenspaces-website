@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen Spaces - Connect With Us</title>
+    <link rel="stylesheet" href="../css/pages/forms.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-box">
+            <span class="close-btn">×</span>
+            <h2>Connect With Us</h2>
+            <p>Feel free to reach out to us for any additional information. Take a moment to fill out the form and we will promptly contact you.</p>
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="event.preventDefault(); return false;">
+                <input type="hidden" name="access_key" value="984d2e76-789d-4165-bc38-c15b09e47f53">
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="first-name">First Name <span class="required-asterisk">*</span></label>
+                        <input type="text" id="first-name" name="first_name" placeholder="First Name" required>
+                        <span class="error-message" id="first-name-error"></span>
+                    </div>
+                    <div class="form-group half">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last_name" placeholder="Last Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email <span class="required-asterisk">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="xyz@gmail.com" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number <span class="required-asterisk">*</span></label>
+                    <input type="tel" id="phone" name="phone" class="phone-input" value="+91" placeholder="xxxxxxxxxx" required>
+                    <span class="error-message" id="phone-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="message">Describe about your project <span class="required-asterisk">*</span></label>
+                    <textarea id="message" name="message" placeholder="Leave us a message..." rows="4"></textarea>
+                    <span class="error-message" id="message-error"></span>
+                </div>
+                <div class="form-group">
+                    <label>Services Needed <span class="required-asterisk">*</span></label>
+                    <div class="checkbox-group">
+                        <label><input type="radio" name="services" value="architecture"> Architecture</label>
+                        <label><input type="radio" name="services" value="interior"> Interior</label>
+                    </div>
+                    <span class="error-message" id="services-error"></span>
+                </div>
+                <div class="form-row dropdown-row">
+                    <div class="form-group half">
+                        <label for="plot-input" id="plot-label">Type of Project <span class="required-asterisk">*</span></label>
+                        <input type="text" id="plot-input" name="plot" placeholder="Select any" required>
+                        <div id="plot-suggestions" class="suggestions">
+                            <ul>
+                                <li data-value="Residential">Residential</li>
+                                <li data-value="Commercial">Commercial</li>
+                                <li data-value="Hospitality">Hospitality</li>
+                                <li data-value="Institutional">Institutional</li>
+                                <li data-value="Industrial">Industrial</li>
+                            </ul>
+                        </div>
+                        <div id="plot-suggestions-interior" class="suggestions" style="display: none;">
+                            <ul>
+                                <li data-value="Villa">Villa</li>
+                                <li data-value="Apartment">Apartment</li>
+                            </ul>
+                        </div>
+                        <span class="error-message" id="plot-error"></span>
+                    </div>
+                    <div class="form-group half">
+                        <label for="date-input" id="date-label">When's it starting? <span class="required-asterisk">*</span></label>
+                        <input type="text" id="date-input" name="date" placeholder="Select any" required>
+                        <div id="date-suggestions" class="suggestions">
+                            <ul>
+                                <li data-value="immediately">Immediately</li>
+                                <li data-value="in-3-months">In 3 Months</li>
+                                <li data-value="in-6-months">In 6 Months</li>
+                                <li data-value="more-than-6-months">More than 6 Months</li>
+                            </ul>
+                        </div>
+                        <span class="error-message" id="date-error"></span>
+                    </div>
+                </div>
+                <div class="form-row dropdown-row">
+                    <div class="form-group half">
+                        <label for="build-site-input" id="build-site-label">Where's the build site? <span class="required-asterisk">*</span></label>
+                        <input type="text" id="build-site-input" name="build_site" placeholder="Type a district..." required>
+                        <div id="suggestions" class="suggestions">
+                            <!-- Options will be populated dynamically via JavaScript -->
+                        </div>
+                        <span class="error-message" id="build-site-error"></span>
+                    </div>
+                    <div class="form-group half">
+                        <label for="budget-input" id="budget-label">Choose a budget? <span class="required-asterisk">*</span></label>
+                        <input type="text" id="budget-input" name="budget" placeholder="Select any" required>
+                        <div id="budget-suggestions" class="suggestions">
+                            <ul>
+                                <li data-value="budget1">20L - 40L</li>
+                                <li data-value="budget2">40L - 60L</li>
+                                <li data-value="budget3">60L - 1Cr</li>
+                                <li data-value="budget4">1Cr - 2Cr</li>
+                                <li data-value="budget5">2Cr - 3Cr</li>
+                                <li data-value="budget6">Above 3Cr</li>
+                            </ul>
+                        </div>
+                        <div id="budget-suggestions-interior" class="suggestions" style="display: none;">
+                            <ul>
+                                <li data-value="1bhk">1BHK</li>
+                                <li data-value="2bhk">2BHK</li>
+                                <li data-value="3bhk">3BHK</li>
+                                <li data-value="4bhk">4BHK</li>
+                                <li data-value="5bhk">5BHK</li>
+                            </ul>
+                        </div>
+                        <span class="error-message" id="budget-error"></span>
+                    </div>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="status" class="status"></p>
+        </div>
+    </div>
+    <!-- Popup Container -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="popup-close">×</span>
+            <p id="popup-message"></p>
+        </div>
+    </div>
+    <script src="../js/pages/forms.js"></script>
+</body>
+</html>

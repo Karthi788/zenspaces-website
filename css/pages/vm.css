@@ -1,0 +1,219 @@
+@font-face {
+    font-family: 'Open Sans Bold';
+    src: url('../../assets/fonts/Open\ Sans\ Bold.ttf') format('truetype');
+    font-weight: bold;
+  }
+  
+  @font-face {
+    font-family: 'Aptos Display';
+    src: url('../../assets/fonts/Aptos\ Display.ttf') format('truetype');
+    font-weight: normal;
+  }  
+  
+  @font-face {
+    font-family: 'Aptos Body';
+    src: url('../../assets/fonts/Aptos.ttf') format('truetype');
+    font-weight: normal;
+  }
+
+
+
+.vm-vision-mission {
+    overflow-x: hidden;
+    background-color: #000;
+    padding: 3rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    
+}
+
+.vm-container {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin: 0 4rem;
+}
+
+.vm-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    flex: 1;
+}
+
+.vm-title {
+    font-size: 3.8rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-family: 'Aptos Display', sans-serif;
+}
+
+.vm-title a.vm-title-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.vm-title[data-section="vision"] {
+    color: #8a8a8a;
+}
+
+.vm-title[data-section="mission"] {
+    color: #8a8a8a;
+}
+
+.vm-title.vm-active {
+    color: #F2E2B1;
+}
+
+.vm-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.vm-img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    transition: opacity 0.5s ease;
+}
+
+.vm-content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.vm-arrows {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2rem;
+    padding-bottom: 100px;
+}
+
+.vm-arrow {
+    background-color: #000;
+    border: 2px solid #F2E2B1;
+    color: #F2E2B1;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.vm-arrow:hover {
+    background-color: #F2E2B1;
+    color: #000;
+}
+
+.vm-content-wrapper {
+    flex: 1;
+    overflow: hidden;
+    align-self: center;
+}
+
+.vm-content-section {
+    display: none;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.vm-content-section.vm-active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.vm-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ccc;
+    overflow-wrap: break-word;
+    transition: opacity 0.5s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .vm-title {
+        font-size: 3.5rem;
+    }
+
+    .vm-content p {
+        font-size: 1.2rem;
+    }
+
+    .vm-img {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .vm-vision-mission {
+        height: auto;
+        padding: 2rem;
+    }
+
+    .vm-container {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .vm-text {
+        gap: 2rem;
+    }
+
+    .vm-title {
+        font-size: 2.5rem;
+    }
+
+    .vm-image {
+        margin-bottom: 1rem;
+    }
+
+    .vm-img {
+        max-width: 200px;
+    }
+
+    .vm-content {
+        flex: 1;
+    }
+
+    .vm-arrows {
+        padding-bottom: 50px;
+        justify-content: center;
+    }
+
+    .vm-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .vm-title {
+        font-size: 2rem;
+    }
+
+    .vm-img {
+        max-width: 150px;
+    }
+
+    .vm-content p {
+        font-size: 0.9rem;
+    }
+
+    .vm-arrow {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,300 @@
+@import url(https://db.onlinewebfonts.com/c/629a55a7e793da068dc580d184cc0e31?family=Open+Sans);
+@import url(https://db.onlinewebfonts.com/c/7dd5f4bf5d38875ca1822a830b6e6fe4?family=Aptos);
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Aptos', sans-serif;
+  background-color: #fff;
+  color: #000;
+  overflow: auto; /* Ensure body scroll is managed by JavaScript */
+}
+
+.page-wrapper {
+  min-height: 100vh; /* Match contact-section's min-height */
+  position: relative; /* Ensure wrapper controls layout */
+}
+
+.contact-section {
+  width: 100%;
+  min-height: 100vh; /* Ensure minimum height to prevent collapse */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-left-section {
+  flex: 1 1 500px;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding-left: 100px; /* Keep left padding for design consistency */
+  z-index: 2;
+  width: 100%; /* Ensure full width usage */
+}
+
+.contact-left-section h1 {
+  font-family: 'Open Sans';
+  font-size: 48px;
+}
+
+.contact-left-section p {
+  font-family: 'Aptos';
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+  margin: 0;
+}
+
+.contact-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Maintain gap for spacing */
+  position: relative; /* Ensure buttons stay in place */
+  flex-shrink: 0; /* Prevent shrinking */
+  align-items: center; /* Vertically center buttons */
+  justify-content: left; /* Center buttons horizontally */
+  width: 100%; /* Use full container width */
+}
+
+#contact-btn-1,
+#contact-btn-2 {
+  font-family: 'Aptos';
+  font-size: 16px;
+  padding: 10px 20px; /* Default padding */
+  border: 1px solid #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+  width: 180px; /* Default width */
+}
+
+#contact-btn-1 {
+  background-color: #F2E2B1;
+  color: #000;
+  margin: 0;
+}
+
+#contact-btn-1:hover {
+  transform: translateY(-2px);
+}
+
+#contact-btn-2 {
+  background-color: #fff;
+  color: #000;
+  margin: 0;
+}
+
+#contact-btn-2:hover {
+  transform: translateY(-2px);
+}
+
+.contact-right-section {
+  flex: 1 1 400px;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-right-section img {
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for differentiation */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: transparent; /* Transparent background */
+    margin: 0 auto; /* Reset margin for centering */
+    padding: 0; /* Remove padding to let form-box handle it */
+    width: 90%; /* Flexible width */
+    max-width: 500px; /* Cap at form-box max-width */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    border-radius: 12px; /* Match popup-content radius */
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+    top: 50%; /* Move form higher */
+    transform: translateY(-50%); /* Center vertically relative to new top */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Add fade-in animation */
+    opacity: 0; /* Start with opacity 0 for fade-in */
+}
+
+.modal-content.show {
+    opacity: 1; /* Fade in to full opacity */
+}
+
+/* Ensure the form-box inside modal blends better and is scrollable */
+.modal-content .form-box {
+    background-color: rgba(255, 255, 255, 0.95); /* Slight transparency for blending */
+    padding: 3%;
+    border: 1px solid #ccc; /* Softer border */
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Reduced shadow */
+    border-radius: 12px;
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+    max-height: 80vh; /* Increased height */
+    overflow-y: auto; /* Enable scroll functionality */
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.modal-content .form-box::-webkit-scrollbar {
+    width: 0; /* Hide scrollbar in WebKit browsers */
+}
+
+.modal-content .form-box {
+    -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+/* Fallback for content overflow */
+.modal-content .form-box {
+    overflow-y: auto; /* Ensure scroll works even without visible scrollbar */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: clamp(1.2em, 4vw, 1.5em); /* Match forms.css close-btn */
+    cursor: pointer;
+    color: #000;
+    z-index: 1001; /* Ensure above form content */
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+#success-notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #F2E2B1; /* Green background for success */
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2001;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#success-notification.show {
+  opacity: 1;
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column-reverse;
+        padding: 20px;
+    }
+
+    .contact-left-section {
+        padding: 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .contact-left-section h1 {
+        font-size: 36px;
+        border-left: none;
+    }
+
+    .contact-left-section p {
+        font-size: 16px;
+        text-align: justify;
+       
+    }
+
+    .contact-btns {
+        justify-content: left;
+    }
+
+    .contact-right-section {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+    }
+
+    .contact-right-section img {
+        opacity: 0.05;
+        object-fit: cover;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 400px; /* Slightly smaller on mobile */
+        top: 50%; /* Maintain lower position on mobile */
+        transform: translateY(-50%);
+    }
+
+    .modal-content .form-box {
+        max-height: 70vh; /* Adjusted height on mobile */
+    }
+}
+
+@media (max-width: 939px) {
+    .contact-right-section img {
+        display: none;
+    }
+}
+
+/* Laptop-specific adjustments */
+@media (min-width: 1024px) {
+    .contact-btns {
+        gap: 10px; /* Consistent gap */
+        flex-wrap: nowrap; /* Prevent wrapping on laptop sizes */
+        justify-content: left; /* Center buttons */
+
+    }
+
+    #contact-btn-1,
+    #contact-btn-2 {
+        width: 160px; /* Further reduced width for compactness */
+        padding: 8px 16px; /* Adjusted padding for smaller size */
+        font-size: 14px; /* Slightly smaller text */
+        width: 200px;
+    }
+}
